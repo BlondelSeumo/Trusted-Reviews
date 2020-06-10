@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>PHP Trusted Reviews</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;PHP Trusted Reviews&rdquo; Documentation by &ldquo;crivion&rdquo; v1.0.5</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;PHP Trusted Reviews&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: Sept 2019<br>
+					By: Alex Crivion<br>
+					Email: <a href="mailto:crivion@gmail.com">crivion@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/crivion">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#install-db">Installing database</a></li>
+			<li><a href="#install-script">Installing the script</a></li>
+			<li><a href="#config-admin">Configure Admin Credentials</a></li>
+			<li><a href="#config-title">Configure Title, Analytics, etc.</a></li>
+			<li><a href="#admin-payment-api">Configure Stripe/PayPal Payment API's</a></li>
+			<li><a href="#admin-domains">Configure Mail Server</a></li>
+			<li><a href="#admin-orders">Configure Pricing Plans & Currency</a></li>
+			<li><a href="#admin-pages">Manage Ad Codes</a></li>
+			<li><a href="#admin-tos">Manage Privacy/TOS Pages</a></li>
+			<li><a href="#admin-upgrade">Bulk Import</a></li>
+			<li><a href="#admin-maps" style="color: red">Crucial: Google Places API</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="install-db"><strong>A) Installing the MySQL Database</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Go to your hosting Control Panel and point to the database manager</li>
+				<li>Create a MySQL database and ASSIGN a MySQL User to it.<br/>
+					Go to phpMyAdmin and select the database you've just created. <br/>
+					Import the file located into <strong>"database/reviews.sql"</strong> folder.</li> 
+
+				<li>Step two is <strong>to open <em>.env</em></strong> (located in the root/main/parent folder of the script) with any text editor and update mysql database connection info<br/>
+
+				<li>Note: <strong>.env file or .htaccess file ( dot files )</strong> might be hidden in your operation system. <br/>You can reveal them depending on the OS you're using.</li>
+
+					<em>LINES 1 TO 5</em><br/><br/>
+
+					<img src="assets/images/configdb.png" alt="db code view" /><br/>
+
+				</li>
+
+			</ul>	
+			
+		<hr>
+
+		<h3 id="install-script"><strong>B) Installing the Script</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Connect to your hosting and upload the extracted zip file folder of the script to your domain. <strong>(must be under either root or subdomain. No subfolders please.)</strong></li>
+				<li>Make sure <strong>.htaccess</strong> file is included otherwise the script will mallfunction as the file is required to do the mod_rewrite SEO friendly URL's job</li>
+			</ul>	
+			
+		<hr>
+
+		<h3 id="config-admin"><strong>C) Configure Admin Credentials</strong> - <a href="#toc">top</a></h3>
+		
+		Just open the same <strong>.env</strong> file ( seen at step 1 ) and enter your admin user/pass
+
+		<img src="assets/images/admin-creds.png" alt="admin credentials" /><br/>
+
+		<hr>
+
+		<h3 id="config-title"><strong>D) Configure Title, Analytics Code, Site Logo, etc.</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin/login</strong> and login with the credentials you've just configured earlier at step C).</li>
+				<li>Point to "Configuration" tab</li>
+				<li>You will see a nice &amp; complete form with options to set the following: SEO Title, Site Title, Insert Analytics Code (like Google Analytics JS Snippet, etc), Site Logo and Homepage related configuration options.</li>
+			</ul>	
+
+			<img src="assets/images/config.png" width="680" />
+		<hr>
+
+		<h3 id="admin-payment-api"><strong>D) Configure Payments API</strong> - <a href="#toc">top</a></h3>
+		<p>
+		<strong>PHP Trusted Reviews supports two gateways </strong> for taking payments:
+		<ul><li>Stripe</li><li>PayPal</li></ul>
+		
+		<h4>STRIPE API</h4>
+		<ul>
+		<li>Step one is to go to Stripe account settings <br />
+		<img src="assets/images/stripe-my-account.png" width="640" />
+		<br />
+		<img src="assets/images/stripe-keys.png" width="640" />
+		</li>
+
+		<li>Step two is to go to <strong>Admin->Configuration</strong> and enter these two credentails.</li>
+			<img src="assets/images/stripe-add-keys.png" alt="db code view" width="640" /><br/>
+
+		</li>
+		</ul>
+
+		<h4>PayPal API</h4>
+		
+		With PayPal it's now even easier by simply entering your PayPal Email address in <strong>Admin->Configuration</strong>
+
+			<img src="assets/images/paypal-add-keys.png" alt="db code view" width="640" /><br/>
+
+		</li>
+		</ul>
+
+
+		</p>
+		<hr />
+
+		<h3 id="admin-domains"><strong>E) Configure Mail Server</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step C).</li>
+				<li>From the left side click "Mail Server"</li>
+				<li>You'll be able to select between default mail() function and SMTP Server (recommended)</li>
+			</ul>	
+
+			<img src="assets/images/mail.png" width="680" />
+
+		</p>
+		<hr>
+
+		<h3 id="admin-orders"><strong>H) Configure Plans Pricing &amp; Currency</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step C).</li>
+				<li>Point to <strong>Ads Setup</strong>.</li>
+			</ul>	
+		<img src="assets/images/pricing.png" width="680">
+		</P>
+		<hr>
+		
+
+		<h3 id="admin-pages"><strong>F) Manage Ad Codes</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step C).</li>
+				<li>Point to <strong>Settings -> Ads</strong> Tab.</li>
+				<li>You can enter any ad codes you prefer (like Google Adwords, etc.)</li>
+			</ul>	
+
+			<img src="assets/images/ads-setup.png" width="680" />
+		<hr>
+
+
+		<h3 id="admin-tos"><strong>G) Manage Privacy / ToS Pages</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier at step C).</li>
+				<li>Select <strong>General Pages</strong> from the left side menu.</li>
+			</ul>	
+
+			<img src="assets/images/pages.png" width="680" />
+
+			<hr>
+
+
+		<h3 id="admin-upgrade"><strong>G) Bulk Import</strong> - <a href="#toc">top</a></h3>
+		
+			You have the option to upload a CSV file with a list of companies to better launchstart your website instead of going with an empty one. <br>
+			For the you can go to <strong>ADMIN->BULK UPLOAD</strong> and upload a file with this format:
+			<br>
+			<STRONG style="color:red;">ATTENTION: If you don't follow the format specified STRICTLY, it will fail of course. Latitude and Longitude is a must for location radius filtering</STRONG>
+			<br>
+			url, business name, latitude, longitude, location, category
+			<br>
+			example:
+			<br>
+			<pre>crivion.com, "crivion web", 51.5010, 0.1933, "Kensignton, London, UK", "Computers, accessories, and services."</pre>
+
+
+			<br>
+		
+		<hr>
+
+		<h3 id="admin-upgrade" style="color: red"><strong>G) Crucial: Google Places API</strong> - <a href="#toc">top</a></h3>
+		
+			In order for location filtering to work and many other functions like address autocomplete when submitting a company you'll need to <strong>enable and add the Google Maps/Places API Keys</strong>. <br>Without this, the app will not function properly.
+			<br><br>
+			
+			<strong>Obtain Google Places API KEY </strong><br>
+			Go to <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a><br>
+
+			<img src="https://reverseauction.crivion.com/assets/images/maps-api-key.png" alt="maps api" width="800">
+
+			<br>
+
+			Also, you can watch this tutorial on youtube I've found useful on how to generate google places api key: <a href="https://www.youtube.com/watch?v=zBur_hgFFRc" target="_blank">https://www.youtube.com/watch?v=zBur_hgFFRc</a>
+
+			<br>
+			<strong>After obtaining the key, just go to ADMIN->Configuration and enter it in the GMAPS PLACES API KEY tab</strong>
+
+			<img src="assets/images/places-api.png" alt="places api key" width="800" />
+
+			<br>
+
+			<h3>Congrats, if you reached this step and completed everything you'll now enjoy a fully working platform</h3>
+		
+		<hr>
+
+
+		
+		<p class="append-bottom alt large"><strong>Alex Crivion</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

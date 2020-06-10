@@ -1,0 +1,15 @@
+This upgrade (v1.0.7) includes:
+
+- fixes error in admin panel when approving a review or company
+
+In order to upgrade to include the new features simply copy and replace the following files:
+
+
+Controllers
+1. upgrade-files/app/Http/Controllers/AdminController.php => app/Http/Controllers/AdminController.php
+
+
+----- 
+Simple as that!
+
+Thank you!

@@ -1,0 +1,286 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #eff3f6;
+  color: #3d4852;
+}
+body a {
+	color: #283179;
+}
+/* custom navigation color */
+.homepage-header {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: 384px;
+    background: url('/images/home-bg.jpg') no-repeat;
+    background-size: cover;
+}
+.homepage-header h1 {
+}
+.homepage-header-container {
+    padding-top: 100px;
+}
+.bg-dark {
+	background-color: #000032 !important;
+}
+.bordered-rounded {
+    border: 1px solid rgba(0,0,0,.125);
+}
+.text-mov {
+  color: #000032;
+}
+.text-bold {
+  font-weight: bold;
+}
+.inline {
+    display: inline;
+}
+.inner-site-header {
+    margin-top: -24px;
+}
+.navbar {
+    padding: 15px;
+    font-size: 14px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #f1f1f1 !important;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #CCCCCC !important;
+}
+.nav-item-bordered {
+    border: 1px solid #f1f1f1;
+}
+.active-side {
+	text-decoration: underline;
+}
+.no-padding {
+	padding: 0 !important;
+}
+@media (min-width: 768px) {
+	.navbar-expand-md .navbar-nav .nav-link  {
+		padding-right: 0.8rem !important;
+	}
+}	
+.card {
+    border: none;
+    -webkit-box-shadow: 1px 0 20px rgba(0, 0, 0, .05);
+    box-shadow: 1px 0 20px rgba(0, 0, 0, .05);
+    padding: 30px 20px 30px 20px;
+}
+.user-thumb {
+	width: 50px;
+	height: 50px;
+}
+.username {
+	display:block;
+	font-size: 16px;
+}
+.table td {
+	color: #6c757d;
+}
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}
+.search-padding {
+    padding: 30px;
+    border-radius: 0;
+}
+.search-btn-padding {
+    padding: 18px;
+    border-radius: 0;
+}
+.inner-search {
+	padding: 20px 0 10px 0;
+	background-color: #bec3c7;
+}
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.height-350 {
+	height: 350px;
+}
+.white {
+	color: white;
+}
+.text-right {
+	text-align: right;
+}
+.promote-tr {
+	background: rgba(0,0,0,.075);
+}
+.promote-tr td {
+	color: #cc0000;
+}
+.promote-profile {
+	color: #cc0000;
+}
+section.pricing {
+  
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+  .pricing .card:hover .btn {
+    opacity: 1;
+  }
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #000032 !important;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #000032;
+}
+.text-star {
+  display: none;
+}
+label {
+  cursor: pointer;
+}
+svg {
+  width: 75px;
+  height: 75px;
+  padding: 0;
+}
+/* hide radio buttons */
+input[name="star"] {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  margin-left: -2px;
+}
+/* hide source svg */
+.star-source {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+/* set initial color to transparent so fill is empty*/
+.star {
+  color: #B0BEC5;
+  transition: color 0.2s ease-in-out;
+}
+/* set direction to row-reverse so 5th star is at the end and ~ 
+  can be used to fill all sibling stars that precede last starred element
+  */
+.star-container {
+  height: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+label:hover ~ label .star,
+svg.star:hover,
+input[name="star"]:focus ~ label .star,
+input[name="star"]:checked ~ label .star {
+  color: #fec105;
+}
+input[name="star"]:checked + label .star {
+  animation: starred 0.5s;
+}
+input[name="star"]:checked + label {
+  animation: scaleup 1s;
+}
+@keyframes scaleup {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes starred {
+  from {
+    color: #fec105;
+  }
+  to {
+    color: #fec105;
+  }
+}
+ul.list-categories {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+ul.list-categories li {
+  width: 30%;
+  list-style: none;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
